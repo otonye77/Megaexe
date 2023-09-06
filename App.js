@@ -1,4 +1,4 @@
-import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { StatusBar } from "expo-status-bar";
 import MainNavigator from './Navigation/Main';
 // import Splash from "./screens/Splash/Splash";
 
