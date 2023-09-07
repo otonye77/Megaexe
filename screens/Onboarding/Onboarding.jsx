@@ -6,12 +6,15 @@ import { useNavigation } from '@react-navigation/native';
 
 const Onboarding = () => {
   const navigation = useNavigation();
+
   const RegistrationScreen = () => {
     navigation.navigate("Register")
   }
+
   const SignInScreen = () => {
     navigation.navigate("Signin")
   }
+  
   return (
     <PagerView style={{ flex: 1 }}>
       <View style={{ flex: 1, width: "100%", position: "relative" }} key="1">
