@@ -21,6 +21,11 @@ const Onboarding = () => {
             source={require("../../assets/onboardingone.png")}
           />
         </View>
+        <View style={{position: 'absolute', top: '10%', paddingHorizontal: 9}}>
+          <Image
+            source={require("../../assets/logowithtext.png")}
+          />
+          </View>
         <View
           style={{
             position: "absolute",
@@ -65,6 +70,11 @@ const Onboarding = () => {
             source={require("../../assets/onboardtwo.png")}
           />
         </View>
+        <View style={{position: 'absolute', top: '10%', paddingHorizontal: 9}}>
+          <Image
+            source={require("../../assets/logowithtext.png")}
+          />
+          </View>
         <View
           style={{
             position: "absolute",
@@ -112,6 +122,11 @@ const Onboarding = () => {
             source={require("../../assets/onboardingthree.png")}
           />
         </View>
+        <View style={{position: 'absolute', top: '10%', paddingHorizontal: 9}}>
+          <Image
+            source={require("../../assets/logowithtext.png")}
+          />
+          </View>
         <View
           style={{
             position: "absolute",
@@ -157,6 +172,11 @@ const Onboarding = () => {
             source={require("../../assets/onboardingfour.png")}
           />
         </View>
+        <View style={{position: 'absolute', top: '10%', paddingHorizontal: 9}}>
+          <Image
+            source={require("../../assets/logowithtext.png")}
+          />
+          </View>
         <View
           style={{
             position: "absolute",
