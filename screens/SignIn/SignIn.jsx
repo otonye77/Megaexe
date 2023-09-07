@@ -11,15 +11,18 @@ import {
 } from "react-native";
 import CustomInput from "../../components/CustomTextInput/CustomTextInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 const { width } = Dimensions.get("window");
 
 const Signin = () => {
-    const navigation = useNavigation();
-    const RegistrationScreen = () => {
-      navigation.navigate("Register")
-    }
+  const navigation = useNavigation();
+  const RegistrationScreen = () => {
+    navigation.navigate("Register");
+  };
+  const HomeScreen = () => {
+    navigation.navigate("Home");
+  };
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -78,6 +81,7 @@ const Signin = () => {
         </View>
         <View style={{ paddingHorizontal: 30 }}>
           <CustomButton
+            onPress={HomeScreen}
             label="Sign In"
             color="#4425F5"
             width="100%"

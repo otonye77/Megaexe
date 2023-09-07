@@ -8,6 +8,7 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import CustomInput from "../../components/CustomTextInput/CustomTextInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
@@ -21,9 +22,6 @@ const Register = () => {
   const SignInScreen = () => {
     navigation.navigate("Signin")
   }
-  const HomeScreen = () => {
-    navigation.navigate("Home")
-  }
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -34,6 +32,13 @@ const Register = () => {
   const toggleCheckBox = () => {
     setState({ ...state, checked: !state.checked });
   };
+  const HomeScreen = () => {
+    if (!state.checked) {
+      Alert.alert("Alert", "Please accept the terms & conditions before registering.");
+    } else {
+      navigation.navigate("Home");
+    }
+  }
   return (
     <View style={{ flex: 1, backgroundColor: "#F7F8FA" }}>
       <SafeAreaView style={{ flex: 1, marginTop: 60, paddingHorizontal: 5 }}>
