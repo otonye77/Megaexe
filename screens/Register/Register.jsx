@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   Text,
-  TextInput,
   Dimensions,
   SafeAreaView,
   Image,

@@ -5,6 +5,7 @@ import {
   Button,
   TouchableOpacity,
   SafeAreaView,
+  ScrollView
 } from "react-native";
 import { Data } from "../../data/data";
 
@@ -49,12 +50,13 @@ const MedicalDrugs = () => {
 const Shop = () => {
   return (
     <View style={{ flex: 1, backgroundColor: "#F7F8FA" }}>
+      <ScrollView>
       <SafeAreaView style={{ flex: 1, marginTop: 60, paddingHorizontal: 10, paddingTop: 30 }}>
         <Text>Shop For Medical Device</Text>
         {MedicalDevice()}
         <Text style={{paddingTop:20}}>Shop For Medicines</Text>
         {MedicalDrugs()}
-        <View style={{paddingTop: 20}}>
+        <View style={{paddingHorizontal: 5,paddingTop: 20}}>
         <View
             style={{
               backgroundColor: "#3E64FF",
@@ -109,7 +111,17 @@ const Shop = () => {
               </View>
           </View>
         </View>
+        <View
+                style={{
+                  paddingTop: 20,
+                  
+                  alignItems: "center",
+                }}
+              >
+                <Image source={require("../../assets/package.png")} />
+              </View>
       </SafeAreaView>
+      </ScrollView>
     </View>
   );
 };
