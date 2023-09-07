@@ -20,6 +20,9 @@ const Signin = () => {
     const RegistrationScreen = () => {
       navigation.navigate("Register")
     }
+    const HomeScreen = () => {
+      navigation.navigate("Home")
+    }
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -78,6 +81,7 @@ const Signin = () => {
         </View>
         <View style={{ paddingHorizontal: 30 }}>
           <CustomButton
+            onPress={HomeScreen}
             label="Sign In"
             color="#4425F5"
             width="100%"
