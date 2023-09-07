@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
 
-const CustomButton = ({ width, height, label, color, onPress, style, disabled}) => {
+const CustomButton = ({ width, height, label, color, onPress, style}) => {
   return (
     <TouchableOpacity
       style={[
@@ -14,7 +14,6 @@ const CustomButton = ({ width, height, label, color, onPress, style, disabled}) 
         style,
       ]}
       onPress={onPress}
-      disabled={disabled}
     >
       <Text style={{color: 'white'}}>{label}</Text>
     </TouchableOpacity>

@@ -109,7 +109,7 @@ const Register = () => {
             color="#4425F5"
             width="100%"
             height={50}
-           disabled={!state.checked}
+
           />
         </View>
         <View
