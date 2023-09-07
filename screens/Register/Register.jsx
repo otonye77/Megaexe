@@ -12,10 +12,18 @@ import {
 import CustomInput from "../../components/CustomTextInput/CustomTextInput";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import { CheckBox } from "react-native-elements";
+import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get("window");
 
 const Register = () => {
+  const navigation = useNavigation();
+  const SignInScreen = () => {
+    navigation.navigate("Signin")
+  }
+  const HomeScreen = () => {
+    navigation.navigate("Home")
+  }
   const [state, setState] = useState({
     firstName: "",
     lastName: "",
@@ -50,7 +58,7 @@ const Register = () => {
             <Text
               style={{
                 fontSize: 14,
-                fontFamily: "Gotham Pro",
+                fontFamily: "Axiforma",
                 fontWeight: 400,
                 textAlign: "center",
               }}
@@ -69,19 +77,19 @@ const Register = () => {
           <CustomInput
             placeholder="Last Name"
             onChangeText={(text) => setState({ ...state, lastName: text })}
-            value={state.lasttName}
+            value={state.lastName}
             iconSource={require("../../assets/Vector.png")}
           />
           <CustomInput
             placeholder="example@gmail.com"
-            onChangeText={(text) => setState({ ...state, firstName: text })}
-            value={state.firstName}
+            onChangeText={(text) => setState({ ...state, email: text })}
+            value={state.email}
             iconSource={require("../../assets/envelope.png")}
           />
           <CustomInput
             placeholder="*********"
-            onChangeText={(text) => setState({ ...state, firstName: text })}
-            value={state.firstName}
+            onChangeText={(text) => setState({ ...state, password: text })}
+            value={state.password}
             iconSource={require("../../assets/Vector.png")}
           />
         </View>
@@ -97,6 +105,7 @@ const Register = () => {
         </View>
         <View style={{ paddingHorizontal: 30 }}>
           <CustomButton
+            onPress={HomeScreen}
             label="Register"
             color="#4425F5"
             width="100%"
@@ -122,7 +131,7 @@ const Register = () => {
         <View style={{ paddingTop: 20, alignItems: "center" }}>
           <Text>
             Already have an account?{" "}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={SignInScreen}>
               <Text
                 style={{ color: "#4425F5", textDecorationLine: "underline" }}
               >

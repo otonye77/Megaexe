@@ -5,6 +5,9 @@ import { StatusBar } from "expo-status-bar";
 import SplashTwo from '../screens/SplashTwo/SplashTwo';
 import Onboarding from '../screens/Onboarding/Onboarding';
 import Register from '../screens/Register/Register';
+import Signin from '../screens/SignIn/SignIn';
+import BottomTab from './BottomTab'; 
+import Home from '../screens/Home/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,6 +20,8 @@ const MainNavigator = () => {
                 <Stack.Screen name='SplashTwo' component={SplashTwo} />
                 <Stack.Screen name='Onboarding' component={Onboarding} />
                 <Stack.Screen name='Register' component={Register} />
+                <Stack.Screen name='Signin' component={Signin} />
+                <Stack.Screen name='Home' component={BottomTab} /> 
             </Stack.Navigator>
         </NavigationContainer>
     )

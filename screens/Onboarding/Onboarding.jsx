@@ -9,6 +9,9 @@ const Onboarding = () => {
   const RegistrationScreen = () => {
     navigation.navigate("Register")
   }
+  const SignInScreen = () => {
+    navigation.navigate("Signin")
+  }
   return (
     <PagerView style={{ flex: 1 }}>
       <View style={{ flex: 1, width: "100%", position: "relative" }} key="1">
@@ -200,6 +203,7 @@ const Onboarding = () => {
             }}
           >
             <CustomButton
+              onPress={SignInScreen}
               label="Sign In"
               color="#4425F5"
               width="80%"
