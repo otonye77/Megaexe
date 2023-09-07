@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -5,9 +6,15 @@ import {
   Button,
   TouchableOpacity,
   SafeAreaView,
+  Modal,
 } from "react-native";
 
 const Home = () => {
+  const [isSidebarVisible, setSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
   return (
     <View style={{ flex: 1, backgroundColor: "#F7F8FA" }}>
       <SafeAreaView style={{ flex: 1, marginTop: 60, paddingHorizontal: 10 }}>
@@ -20,7 +27,7 @@ const Home = () => {
         >
           <Image source={require("../../assets/Profile.png")} />
           <Image source={require("../../assets/bell.png")} />
-          <TouchableOpacity>
+          <TouchableOpacity onPress={toggleSidebar}>
             <Image source={require("../../assets/menu.png")} />
           </TouchableOpacity>
         </View>
@@ -98,15 +105,13 @@ const Home = () => {
             paddingTop: 20,
             width: "100%",
             paddingHorizontal: 20,
-            alignItems: 'center',
-            justifyContent: 'center',
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Image
-            source={require("../../assets/calendartwo.png")}
-          />
-          <Text style={{marginLeft: 6}}>Schedule Appointment Calendar</Text>
-          <Text style={{marginLeft: 6}}>{'->'}</Text>
+          <Image source={require("../../assets/calendartwo.png")} />
+          <Text style={{ marginLeft: 6 }}>Schedule Appointment Calendar</Text>
+          <Text style={{ marginLeft: 6 }}>{"->"}</Text>
         </TouchableOpacity>
         <View style={{ paddingTop: 20, width: "100%", paddingHorizontal: 20 }}>
           <Text
@@ -124,6 +129,79 @@ const Home = () => {
             source={require("../../assets/Rectangle.png")}
           />
         </View>
+        <Modal
+          visible={isSidebarVisible}
+          animationType="slide"
+          transparent={true}
+        >
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: "rgba(0,0,0,0.5)",
+              justifyContent: "flex-start",
+              paddingHorizontal: 0,
+            }}
+          >
+            <View
+              style={{
+                backgroundColor: "white",
+                width: "60%",
+                height: "100%",
+                paddingTop: 60,
+                paddingLeft: 20,
+              }}
+            >
+              <TouchableOpacity onPress={toggleSidebar}>
+                <Text>X</Text>
+              </TouchableOpacity>
+              <View style={{ width: "100%" }}>
+                <Image source={require("../../assets/Profile.png")} />
+              </View>
+              <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/wallet.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>Wallet</Text> 
+                </View>
+              </View>
+              <View style={{ paddingTop:20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/location.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>Track Orders</Text> 
+                </View>
+              </View>
+              <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/edit.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>My Post</Text> 
+                </View>
+              </View>
+              <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/setting-2.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>Setting</Text> 
+                </View>
+              </View>
+              <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/receipt-edit.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>Live Support</Text> 
+                </View>
+              </View>
+              <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/setting-2.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>Suggest Features</Text> 
+                </View>
+              </View>
+              <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'center' }}>
+                <Image source={require("../../assets/logout.png")} />
+                <View style={{paddingHorizontal: 20}}>
+                 <Text>Log Out</Text> 
+                </View>
+              </View>
+            </View>
+          </View>
+        </Modal>
       </SafeAreaView>
     </View>
   );

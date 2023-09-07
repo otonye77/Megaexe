@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View , Image} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home/Home";
+import Shop from "../screens/Shop/Shop";
 
 const BottomTab = () => {
   const Tabs = createBottomTabNavigator();
@@ -47,7 +48,7 @@ const BottomTab = () => {
       />
       <Tabs.Screen
         name="Shop"
-        component={Home}
+        component={Shop}
         options={{
           tabBarIcon: ({ focused, color, size }) => (
             <Image
